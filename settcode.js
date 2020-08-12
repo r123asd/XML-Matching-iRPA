@@ -42,7 +42,7 @@ GLOBAL.step({ EnterTransaction1: function(ev, sc, st) {
 		SAPLogon750.pSAPEasyAccess.oGuiOkCodeField.set('J1UFMATCHING');
 		SAPLogon750.pSAPEasyAccess.btGuiButton.click();
 		
-		rootData.startDay = 8;
+		rootData.startDay = 22;
 		GLOBAL.scenarios.prepareNextDay.start(rootData);
 		sc.endStep(); // SetFilters
 		return;
