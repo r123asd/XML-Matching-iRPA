@@ -36,13 +36,13 @@ GLOBAL.scenario({ SetTcode: function(ev, sc) {
 // ----------------------------------------------------------------
 GLOBAL.step({ EnterTransaction1: function(ev, sc, st) {
 	var rootData = sc.data;
-	ctx.workflow('J1UFMATCHING', 'cb36e589-1e6e-47c2-aa32-fefb3c182e41') ;
+	ctx.workflow('SetTcode', 'cb36e589-1e6e-47c2-aa32-fefb3c182e41') ;
 	// Custom
 	SAPLogon750.pSAPEasyAccess.wait(function(ev) {
-		SAPLogon750.pSAPEasyAccess.oGuiOkCodeField.set('J1UFMATCHING');
+		SAPLogon750.pSAPEasyAccess.oGuiOkCodeField.set(rootData.transaction);
 		SAPLogon750.pSAPEasyAccess.btGuiButton.click();
 		
-		rootData.startDay = 22;
+		rootData.startDay = 23;
 		GLOBAL.scenarios.prepareNextDay.start(rootData);
 		sc.endStep(); // SetFilters
 		return;

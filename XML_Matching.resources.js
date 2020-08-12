@@ -54,6 +54,17 @@ SAPLogon750.pLogDisplay = SAPLogon750.addPage('pLogDisplay', {"comment":"GuiMain
 SAPLogon750.pLogDisplay.oStatusBar = SAPLogon750.pLogDisplay.addItem('oStatusBar', {"customType":"GuiStatusbar"});
 SAPLogon750.pLogDisplay.btBack = SAPLogon750.pLogDisplay.addItem('btBack', {"customType":"GuiButton"});
 
+SAPLogon750.pXMLselect = SAPLogon750.addPage('pXMLselect', {"comment":"GuiMainWindow - Processing Incoming Electronic Files","nature":"SAPGUI","customType":"GuiMainWindow"});
+SAPLogon750.pXMLselect.btExec = SAPLogon750.pXMLselect.addItem('btExec', {"mustExist":true,"customType":"GuiButton"});
+SAPLogon750.pXMLselect.oFileType = SAPLogon750.pXMLselect.addItem('oFileType', {"mustNotExist":true,"customType":"GuiLabel"});
+
+SAPLogon750.pXMLresults = SAPLogon750.addPage('pXMLresults', {"comment":"GuiMainWindow - Processing Incoming Electronic Files","nature":"SAPGUI","customType":"GuiMainWindow"});
+SAPLogon750.pXMLresults.oFileType = SAPLogon750.pXMLresults.addItem('oFileType', {"mustExist":true,"customType":"GuiLabel"});
+SAPLogon750.pXMLresults.btLogs = SAPLogon750.pXMLresults.addItem('btLogs', {"customType":"GuiButton"});
+SAPLogon750.pXMLresults.oTotal = SAPLogon750.pXMLresults.addItem('oTotal', {"customType":"GuiLabel"});
+SAPLogon750.pXMLresults.oSuccessTotal = SAPLogon750.pXMLresults.addItem('oSuccessTotal', {"customType":"GuiLabel"});
+SAPLogon750.pXMLresults.oFailTotal = SAPLogon750.pXMLresults.addItem('oFailTotal', {"customType":"GuiLabel"});
+
 GLOBAL.events.START.on(function(ev) { 
     GLOBAL.createExtendedConnector(e.extendedConnector.UIAutomation, '', '', '');
 });
