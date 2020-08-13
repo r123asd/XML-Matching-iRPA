@@ -3,15 +3,7 @@
 //   Test menu for scenario FinalActions 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	if (ctx.options.isDebug) {
-		// Add item in systray menu.
-		systray.addMenu('', 'FinalActions', 'Test FinalActions', '', function (ev) {
-			var rootData = ctx.dataManagers.rootData.create();
-			
-			// Initialize your data here.
-			GLOBAL.scenarios.FinalActions.start(rootData);
-		});
-	}
+
 });
 
 //---------------------------------------------------

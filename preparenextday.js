@@ -3,15 +3,7 @@
 //   Test menu for scenario prepareNextDay 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	if (ctx.options.isDebug) {
-		// Add item in systray menu.
-		systray.addMenu('', 'prepareNextDay', 'Test prepareNextDay', '', function (ev) {
-			var rootData = ctx.dataManagers.rootData.create();
-			
-			// Initialize your data here.
-			GLOBAL.scenarios.prepareNextDay.start(rootData);
-		});
-	}
+
 });
 
 //---------------------------------------------------

@@ -3,15 +3,7 @@
 //   Test menu for scenario J1UFM 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	if (ctx.options.isDebug) {
-		// Add item in systray menu.
-		systray.addMenu('', 'J1UFM', 'Test J1UFM', '', function (ev) {
-			var rootData = ctx.dataManagers.rootData.create();
-			
-			// Initialize your data here.
-			GLOBAL.scenarios.J1UFM.start(rootData);
-		});
-	}
+
 });
 
 //---------------------------------------------------

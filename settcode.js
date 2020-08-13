@@ -3,15 +3,7 @@
 //   Test menu for scenario SetTcode 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	if (ctx.options.isDebug) {
-		// Add item in systray menu.
-		systray.addMenu('', 'SetTcode', 'Test SetTcode', '', function (ev) {
-			var rootData = ctx.dataManagers.rootData.create();
-			
-			// Initialize your data here.
-			GLOBAL.scenarios.SetTcode.start(rootData);
-		});
-	}
+
 });
 
 //---------------------------------------------------

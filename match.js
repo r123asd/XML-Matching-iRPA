@@ -3,15 +3,7 @@
 //   Test menu for scenario Match 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	if (ctx.options.isDebug) {
-		// Add item in systray menu.
-		systray.addMenu('', 'Match', 'Test Match', '', function (ev) {
-			var rootData = ctx.dataManagers.rootData.create();
-			
-			// Initialize your data here.
-			GLOBAL.scenarios.Match.start(rootData);
-		});
-	}
+
 });
 
 //---------------------------------------------------

@@ -3,15 +3,7 @@
 //   Test menu for scenario J1UFMATCHING 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	if (ctx.options.isDebug) {
-		// Add item in systray menu.
-		systray.addMenu('', 'J1UFMATCHING', 'Test J1UFMATCHING', '', function (ev) {
-			var rootData = ctx.dataManagers.rootData.create();
-			
-			// Initialize your data here.
-			GLOBAL.scenarios.J1UFMATCHING.start(rootData);
-		});
-	}
+
 });
 
 //---------------------------------------------------
