@@ -1,54 +1,43 @@
 ﻿
 // ----------------------------------------------------------------
-//   Test menu for scenario SetTcode 
+//   Test menu for scenario Load_XML 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
 	if (ctx.options.isDebug) {
 		// Add item in systray menu.
-		systray.addMenu('', 'SetTcode', 'Test SetTcode', '', function (ev) {
+		systray.addMenu('', 'Load_XML', 'Test Load_XML', '', function (ev) {
 			var rootData = ctx.dataManagers.rootData.create();
 			
 			// Initialize your data here.
-			GLOBAL.scenarios.SetTcode.start(rootData);
+			GLOBAL.scenarios.Load_XML.start(rootData);
 		});
 	}
 });
 
 //---------------------------------------------------
-// Scenario SetTcode Starter ()
+// Scenario Load_XML Starter ()
 //---------------------------------------------------
 
 // ----------------------------------------------------------------
-//   Scenario: SetTcode
+//   Scenario: Load_XML
 // ----------------------------------------------------------------
-GLOBAL.scenario({ SetTcode: function(ev, sc) {
+GLOBAL.scenario({ Load_XML: function(ev, sc) {
 	var rootData = sc.data;
 
 	sc.setMode(e.scenario.mode.clearIfRunning);
 	sc.setScenarioTimeout(600000); // Default timeout for global scenario.
 	sc.onError(function(sc, st, ex) { sc.endScenario(); }); // Default error handler.
 	sc.onTimeout(30000, function(sc, st) { sc.endScenario(); }); // Default timeout handler for each step.
-	sc.step(GLOBAL.steps.EnterTransaction1);
-}}, ctx.dataManagers.rootData).setId('f65f0c12-a3e3-4508-ab0a-a3f512543f4b') ;
+	sc.step(GLOBAL.steps.Custom_8);
+}}, ctx.dataManagers.rootData).setId('182ae096-505c-4ef1-b3ce-de3c9ed49128') ;
 
 // ----------------------------------------------------------------
-//   Step: EnterTransaction
+//   Step: Custom_8
 // ----------------------------------------------------------------
-GLOBAL.step({ EnterTransaction1: function(ev, sc, st) {
+GLOBAL.step({ Custom_8: function(ev, sc, st) {
 	var rootData = sc.data;
-	ctx.workflow('SetTcode', 'cb36e589-1e6e-47c2-aa32-fefb3c182e41') ;
+	ctx.workflow('Load_XML', 'f793e306-6abd-4dfd-93c5-eaf7bb51cf40') ;
 	// Custom
-	SAPLogon750.pSAPEasyAccess.wait(function(ev) {
-		SAPLogon750.pSAPEasyAccess.oGuiOkCodeField.set(rootData.transaction);
-		SAPLogon750.pSAPEasyAccess.btGuiButton.click();
-		
-		if (rootData.transaction == 'J1UFMATCHING') {
-			rootData.startDay = 23;
-			GLOBAL.scenarios.prepareNextDay.start(rootData);
-		} else {
-			
-		}
-		sc.endStep(); // SetFilters
-		return;
-	});
+	sc.endStep(); // end Scenario
+	return;
 }});

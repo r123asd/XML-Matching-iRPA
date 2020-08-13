@@ -2,7 +2,7 @@
 //   Test menu for scenario LogOn 
 // ----------------------------------------------------------------
 GLOBAL.events.START.on(function (ev) {
-	systray.addMenu('', 'LogOn', 'Start Log On', '', function (ev) {
+	systray.addMenu('', 'LogOn', 'Process XML', '', function (ev) {
 		var rootData = ctx.dataManagers.rootData.create();
 		
 		// Initialize your data here.
