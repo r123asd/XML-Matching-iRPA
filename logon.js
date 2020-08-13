@@ -175,7 +175,7 @@ GLOBAL.step({ pSAP_management: function(ev, sc, st) {
 		
 		SAPLogon750.pSAP.keyStroke(e.SAPScripting.key._Enter_);
 		
-		rootData.transaction = 'J1UFMATCHING';
+		rootData.transaction = 'J1UFDIPROCIN';
 		GLOBAL.scenarios.SetTcode.start(rootData);
 		
 		sc.endStep(); // end Scenario

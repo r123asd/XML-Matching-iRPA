@@ -45,9 +45,9 @@ GLOBAL.step({ EnterTransaction1: function(ev, sc, st) {
 		if (rootData.transaction == 'J1UFMATCHING') {
 			rootData.startDay = 23;
 			GLOBAL.scenarios.prepareNextDay.start(rootData);
-		} else {
-			
-		}
+		} else if (rootData.transaction == 'J1UFDIPROCIN') {
+			GLOBAL.scenarios.Load_XML.start(rootData);
+		} 
 		sc.endStep(); // SetFilters
 		return;
 	});
