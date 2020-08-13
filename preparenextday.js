@@ -31,7 +31,7 @@ GLOBAL.step({ Custom_6: function(ev, sc, st) {
 	ctx.workflow('prepareNextDay', 'b70331e8-ce1a-4943-a9ae-f28a28e8643c') ;
 	rootData.startDay++;
 	
-	if (rootData.startDay > 25) {
+	if (rootData.startDay > 19) {
 		//GLOBAL.scenarios.J1UFMATCHING.start(rootData);
 		sc.endStep(); // end Scenario
 		return;

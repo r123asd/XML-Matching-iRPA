@@ -35,7 +35,7 @@ GLOBAL.step({ EnterTransaction1: function(ev, sc, st) {
 		SAPLogon750.pSAPEasyAccess.btGuiButton.click();
 		
 		if (rootData.transaction == 'J1UFMATCHING') {
-			rootData.startDay = 23;
+			rootData.startDay = 18;
 			GLOBAL.scenarios.prepareNextDay.start(rootData);
 		} else if (rootData.transaction == 'J1UFDIPROCIN') {
 			GLOBAL.scenarios.Load_XML.start(rootData);
